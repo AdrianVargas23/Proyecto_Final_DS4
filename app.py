@@ -4,10 +4,15 @@ from Funciones import consultar
 import pymysql
 
 app = Flask(__name__)
+loggeado = False
 
 @app.route('/')
 def index():
-    return render_template("index.html")
+    if loggeado == True:
+        return render_template("index.html")
+    else:
+        if loggeado == False:
+            return redirect('./login')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():  # put application's code here
@@ -16,13 +21,11 @@ def login():  # put application's code here
     else:
         if request.method == 'POST':
             username = request.form['username']
-            print(username)
             password = request.form['password']
-            print(password)
-            consultar(username, password)
-            username=usuario
-            name=nombre
-            usuario_correcto = check
+            lista = consultar(username, password)
+            username=lista[0]
+            name=lista[1]
+            usuario_correcto = lista[2]
             print(username)
             print(name)
             print(usuario_correcto)
@@ -30,7 +33,8 @@ def login():  # put application's code here
                 session['username'] = username
                 session['nombre'] = name
                 session['logged_in'] = True
-                return redirect('/')
+                loggeado = True
+                return redirect('/', loggeado)
             else:
                 msg = f'Usuario o contraseña incorrectos.'
                 return render_template("login.html", mensaje=msg)

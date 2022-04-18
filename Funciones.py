@@ -1,7 +1,7 @@
 import pymysql
 
 
-def consultar(usuario:str, contra:str):
+def consultar(usuario: str, contra: str) -> list:
     try:
         conexion = pymysql.connect(host='localhost',
                                    user='root',
@@ -13,12 +13,18 @@ def consultar(usuario:str, contra:str):
                 consulta = "SELECT username, nombre FROM usuarios WHERE username = %s AND contrasenia = %s;"
                 cursor.execute(consulta, (usuario, contra))
                 # Con fetchall traemos todas las filas
-                lista_usuarios = cursor.fetchall() #(usuario, nombre)
-                usuarios = lista_usuarios[0]
-                nombre = lista_usuarios[1]
-
+                lista_usuarios = cursor.fetchall()  # (usuario, nombre)
+                print(lista_usuarios[0])
+                lista_final = lista_usuarios[0]
+                print(lista_final[0])
+                print(lista_usuarios)
+                print(lista_usuarios[0])
+                user = lista_final[0]
+                nombre = lista_final[1]
                 usuario_correcto = True
-                print(usuarios)
+                lista_final_final = [user,nombre,usuario_correcto]
+
+
 
         finally:
             conexion.close()
