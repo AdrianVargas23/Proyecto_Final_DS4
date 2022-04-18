@@ -28,10 +28,9 @@ def consultar(usuario: str, contra: str) -> list:
 
         finally:
             conexion.close()
-            return usuarios
-            return nombre
-            return usuario_correcto
             print("cerrando")
+            return lista_final_final
+
 
     except (pymysql.err.OperationalError, pymysql.err.InternalError) as e:
         print("Ocurrió un error al conectar: ", e)
