@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% block head  %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+        h1 {font-family: "Arial Black", Gadget, sans-serif;
+            font-size: 34px;
+            letter-spacing: -0.6px;
+            word-spacing: 2px;
+            color: #FF9A3C;
+            font-weight: normal;
+            text-decoration: none;
+            font-style: normal;
+            font-variant: normal;
+            text-transform: none;
+            text-shadow: 2px 2px 2px rgba(28,110,164,0.80);
+        }
+        h2 {color:#ececec;
+            font-family: Georgia, serif;
+            font-size: 18px;
+            letter-spacing: 0.4px;
+            word-spacing: 0px;
+            font-weight: 700;
+            text-decoration: none solid rgb(68, 68, 68);
+            font-style: normal;
+            font-variant: normal;
+            text-transform: none;
+        }
+        body {
+            color:#ffc93c;
+            align-self: center;
+            font-family: Georgia, serif;
+            font-size: 14px;
+        }
+        .fecha {color: #eeeeee;
+                font-family: "Comic Sans MS", cursive, sans-serif;
+                font-size: 18px;
+                letter-spacing: 0.4px;
+                word-spacing: 0px;
+                font-weight: 700;
+                text-decoration: none solid rgb(68, 68, 68);
+                font-style: normal;
+                font-variant: normal;
+                text-transform: none;}
+        .bloque {
+
+                 text-align: center;
+                 background-color:#333399;;
+
+        }
+        .liga {
+                font-family: Georgia, serif;
+                font-size: 15px;
+                letter-spacing: 0.4px;
+                word-spacing: 0px;
+                color: #eeeeee;
+                font-weight: 400;
+                text-decoration: none solid rgb(68, 68, 68);
+                font-style: italic;
+                font-variant: normal;
+                text-transform: none;
+        }
+        .liga:hover {
+                color: #eeeeee;
+                text-decoration:   underline;
+        }
+    </style>
+    {% endblock %}
+</head>
+
+<div>
+    <div>
+        <a href="/"><img src="/static/logotipo.png"></a>
+    </div>
+    <div class="bloque_">
+        {% block body %}
+        {% endblock %}
+    </div>
+</div>
+<footer>
+    {% block footer %}
+    {% endblock %}
+</footer>
+</html>
