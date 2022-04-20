@@ -9,7 +9,8 @@ app.secret_key = 'Ponganos_100_profe_:('
 @app.route('/')
 def index():
     if 'logged_in' in session.keys():
-        return render_template("index.html")
+        if session['logged_in'] == True:
+          return render_template("index.html")
     else:
         return redirect('./login')
 

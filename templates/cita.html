@@ -9,10 +9,36 @@
 <form action="" method="POST">
     <label for="fecha">Fecha:</label>
     <input type="date" id="fecha" name="fecha"  required><br>
+    <label for="hora_cita">Elija la hora de su cita: </label>
+    <input id="hora_cita" type="time" name="hora_cita" list="lista_citas" step="1800" required><br>
     <label for="nombre">Nombre del paciente:</label>
     <input type="text" id="nombre_paciente" name="nombre_paciente" required ><br>
 
     <input type="submit" name="enviar" value="Enviar">
 </form>
+    <datalist id="lista_citas">
+        <option value="09:00">
+        <option value="09:30">
+        <option value="10:00">
+        <option value="10:30">
+        <option value="11:00">
+        <option value="11:30">
+        <option value="12:00">
+        <option value="12:30">
+        <option value="13:00">
+        <option value="13:30">
+        <option value="14:00">
+        <option value="14:30">
+        <option value="15:00">
+        <option value="15:30">
+        <option value="16:00">
+        <option value="16:30">
+        <option value="17:00">
+        <option value="17:30">
+        <option value="18:00">
+        <option value="18:30">
+        <option value="19:00">
+        <option value="19:30">
+</datalist>
 
 {% endblock %}
