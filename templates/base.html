@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+
+   <head>
     {% block head  %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,9 +17,9 @@
             text-decoration: none;
             font-style: normal;
             font-variant: normal;
+            text-align: center;
             text-transform: none;
-            text-shadow: 2px 2px 2px rgba(28,110,164,0.80);
-        }
+            text-shadow: 2px 2px 2px rgba(28,110,164,0.80);}
         h2 {color:#ececec;
             font-family: Georgia, serif;
             font-size: 18px;
@@ -28,13 +29,14 @@
             text-decoration: none solid rgb(68, 68, 68);
             font-style: normal;
             font-variant: normal;
-            text-transform: none;
-        }
+            text-align: center;
+            text-transform: none;}
         body {
             color:#ffc93c;
             align-self: center;
             font-family: Georgia, serif;
             font-size: 14px;
+            background-color: #32A90E;
         }
         .fecha {color: #eeeeee;
                 font-family: "Comic Sans MS", cursive, sans-serif;
@@ -49,7 +51,7 @@
         .bloque {
 
                  text-align: center;
-                 background-color:#333399;;
+                 background:#333399;;
 
         }
         .liga {
@@ -68,10 +70,67 @@
                 color: #eeeeee;
                 text-decoration:   underline;
         }
-    </style>
-    {% endblock %}
-</head>
+        .loguear{
+            width: 400px;
+            height: 340px;
+            background: #0FBBD8;
+            margin: auto;
+            margin-top: 130px;
+            box-shadow: 7px 13px 37px #094586;
+            padding: 20px 30px;
+            border-top: 4px solid #000;
+            color: white;
+        }
+        .loguear h5{
+            margin: 0;
+            text-align: center;
+            height: 40px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid;
+            font-size: 20px;
+        }
+        .titulo{
+            margin: auto;
+            text-align: auto;
+        }
+        .textos{
+            margin: auto;
+            width: 80%;
+            border: 1px solid #000;
+            margin-bottom: 15px;
+            padding: 11px 39px;
+            background: #034F5B;
+            font-weight: bold;
+            border-radius: 25px;
+        }
+        .boton{
+            width: 100%;
+            height: 40px;
+            background: #000;
+            border: none;
+            color: white;
+            margin-bottom: 16px;
+            border-style: outset;
 
+        }
+        .loguear p{
+            height: 40px;
+            text-align: center;
+            border-bottom: 1px;
+        }
+        .loguear a{
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .loguear a:hover{
+            text-decoration: underline;
+        }
+
+    </style>
+
+
+{% endblock %}
 <div>
     <div>
         <a href="/"><img src="/static/logotipo.png"></a>
@@ -85,4 +144,5 @@
     {% block footer %}
     {% endblock %}
 </footer>
+
 </html>

@@ -1,4 +1,5 @@
 import pymysql
+from passlib.handlers.sha2_crypt import sha256_crypt
 
 
 def consultar(usuario: str, contra: str) -> list:
@@ -10,17 +11,16 @@ def consultar(usuario: str, contra: str) -> list:
         try:
             with conexion.cursor() as cursor:
                 print("test")
-                consulta = "SELECT username, nombre FROM usuarios WHERE username = %s AND contrasenia = %s;"
+                consulta = "SELECT username, nombre, contrasenia FROM usuarios WHERE username = %s;"
                 cursor.execute(consulta, (usuario, contra))
                 # Con fetchall traemos todas las filas
                 lista_usuarios = cursor.fetchall()  # (usuario, nombre)
                 lista_final = lista_usuarios[0]
                 user = lista_final[0]
                 nombre = lista_final[1]
-                usuario_correcto = True
-                lista_final_final = [user,nombre,usuario_correcto]
-
-
+                contrasenia = lista_final[2]
+                contrasenia_verificada = sha256_crypt.verify(contra, contrasenia)
+                lista_final_final = [user,nombre,contrasenia_verificada]
 
         finally:
             conexion.close()

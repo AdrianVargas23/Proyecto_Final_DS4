@@ -1,19 +1,32 @@
 {%  extends "base.html"  %}
+<!--
 {% block title %}Login
 {% endblock %}
 {% block head %}
 {{ super() }}
 {% endblock %}
-{% block body %}
-<h2>Login</h2>
-<h3>Introduzca su usuario y contraseña</h3>
-<h3>{{mensaje}}</h3>
 
-<form action="" method="POST">
-    <label for="user">Username:</label>
-    <input type="text" id="username" name="username"  ><br>
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" ><br>
-    <input type="submit" name="enviar" value="Enviar">
-</form>
+{% block body %}
+-->
+    <h3>{{mensaje}}</h3>
+
+<section class = "titulo">
+    <h2>Login</h2>
+</section>
+<section class = "loguear">
+    <form action="" method="POST">
+        <h5>Introduzca su usuario y contraseña</h5>
+        <!--
+        <label for="user">Username:</label>
+        -->
+        <input class = "textos" type="text" id="username" name="username"  placeholder="usuario"><br>
+        <!--
+        <label for="password">Password:</label>
+        -->
+        <input class = "textos" type="password" id="password" name="password" placeholder="contraseña"><br>
+        <input class = "boton" type="submit" name="enviar" value="Enviar">
+        <p><a href = "./register">¿No tienes cuenta? Crea una</a></p>
+        <p><a href = "#">¿Olvidaste tu contraseña?</a></p>
+    </form>
+</section>
 {% endblock %}

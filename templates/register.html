@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{%  extends "base.html"  %}
+{% block title %}Registro
+{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+{% block body %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Cuenta</title>
+</head>
+<body>
+    <section class = "loguear">
+        <input class = "textos" type="text" id="username" name="username"  placeholder="usuario"><br>
+        <input class = "textos" type="password" id="password" name="password" placeholder="contraseÃ±a"><br>
+        <input class = "textos" type="text" id="name" name="name"  placeholder="nombre"><br>
+        <input class = "textos" type="text" id="apellido" name="apellido"  placeholder="apellido"><br>
+        <input class = "textos" type="text" id="telefono" name="telefono"  placeholder="Numero de telefono"><br>
+        <h5>Pregunta de seguridad</h5>
+        <datalist id="pregunta seguridad">
+            <option value="¿Cuál es tu ciudad de nacimiento?">
+            <option value="¿Cuál es tu primer trabajo??">
+            <option value="¿Por que el profe nos va a poner 100?">
+        </datalist>
+        <input class = "textos" type="text" id="Respuesta" name="Respuesta" placeholder="Respuesta"><br>
+        <input class = "boton" type="submit" name="enviar" value="Enviar">
+    </section>
+</body>
+</html>
+{% endblock %}
